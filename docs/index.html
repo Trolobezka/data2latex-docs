@@ -112,7 +112,7 @@
 <p>Data2LaTeX offers two basic features: sections and plain text. If you need other features and environment, you can use PyLaTeX to create the features and insert them into the document object manually.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">data2latex</span> <span class="k">as</span> <span class="nn">dtol</span>
 <span class="n">dtol</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s2">&quot;Data2LaTeX&quot;</span><span class="p">)</span>
-<span class="n">dtol</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;This project is part of my bachelor thesis which deals with data representation using Python and LaTeX&quot;</span><span class="p">)</span>
+<span class="n">dtol</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;This project is part of my bachelor thesis which deals with data representation using Python and LaTeX.&quot;</span><span class="p">)</span>
 <span class="n">dtol</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="s2">&quot;simple_features&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -193,7 +193,6 @@
 <h2>Multiple scatter plots<a class="headerlink" href="#multiple-scatter-plots" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">data2latex</span> <span class="k">as</span> <span class="nn">dtol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">dtol</span><span class="o">.</span><span class="n">use_one_page_standalone</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]]</span>
 <span class="n">dtol</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -209,7 +208,6 @@
 <h2>Multiple line plots<a class="headerlink" href="#multiple-line-plots" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">data2latex</span> <span class="k">as</span> <span class="nn">dtol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">dtol</span><span class="o">.</span><span class="n">use_one_page_standalone</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">dtol</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -309,7 +307,6 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">import</span> <span class="nn">data2latex</span> <span class="k">as</span> <span class="nn">dtol</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">dtol</span><span class="o">.</span><span class="n">use_one_page_standalone</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
 <span class="s2">x,A,B</span>
 <span class="s2">0,0.0367,0.3447</span>
